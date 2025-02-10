@@ -4,16 +4,20 @@ namespace WebApplication1.Models
 {
     public class Contacto
     {
-        public int  Id { get; set; }
+        public int Id { get; set; }
 
-        [Required(ErrorMessage = "El nombre es obligatorio.")]
+        [Required(ErrorMessage = "El nombre es obligatorio")]
+    
         public string Nombre { get; set; }
 
-        [Required(ErrorMessage = "El correo electrónico es obligatorio.")]
-        [EmailAddress(ErrorMessage = "El correo electrónico no es válido.")]
+        [Required(ErrorMessage = "El correo electronico es obligatorio")]
+        [EmailAddress(ErrorMessage = "Formato de correo no valido")]
+      
         public string Correo { get; set; }
 
-        [Required(ErrorMessage = "El mensaje es obligatorio.")]
+        [Required(ErrorMessage = "El mensaje es obligatorio")]
+        [StringLength(500, ErrorMessage = "El mensaje no puede superar los 500 caracteres")]
+
         public string Mensaje { get; set; }
     }
 }
