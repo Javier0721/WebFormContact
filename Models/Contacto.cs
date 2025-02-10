@@ -7,12 +7,12 @@ namespace WebApplication1.Models
         public int Id { get; set; }
 
         [Required(ErrorMessage = "El nombre es obligatorio")]
-    
+
         public string Nombre { get; set; }
 
         [Required(ErrorMessage = "El correo electronico es obligatorio")]
         [EmailAddress(ErrorMessage = "Formato de correo no valido")]
-      
+
         public string Correo { get; set; }
 
         [Required(ErrorMessage = "El mensaje es obligatorio")]
@@ -20,4 +20,11 @@ namespace WebApplication1.Models
 
         public string Mensaje { get; set; }
     }
+    public class ContactViewModel
+    {
+        public ContactMessage NuevoMensaje { get; set; }
+
+        public List<ContactMessage> Mensajes { get; set; } = new List<ContactMessage>();
+    }
+
 }
